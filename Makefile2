@@ -1,0 +1,15 @@
+CC = g++
+CFLAGS = -Wall -g
+PROG = spider
+
+OBJLIBS = libSOIL.a
+SRCS = spider.cpp
+LIBS = -L. -lSOIL -lglut -lGL -lGLU -lrt -lm
+
+all: $(PROG)
+
+$(PROG):	$(SRCS) $(OBJS)
+	$(CC) $(CFLAGS) -o $(PROG) $(SRCS) $(LIBS)
+
+clean:
+	rm -f $(PROG)
